@@ -1,0 +1,36 @@
+#header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width:100%;
+    min-height: 50px;
+    background-color: rgba(103,112,138,.75);
+    padding: 5pt;
+    padding-left:10pt;
+    
+    font-family: Montserrat,sans-serif;
+    font-weight:700;
+    font-size: 30pt;
+    color: rgba(250,255,255,.95);
+}
+
+#header2{
+    width: calc(100% - 201pt);
+    text-align:right;
+    position:fixed;
+    vertical-align: top;
+    top:11pt;
+    }
+    
+#search{
+    border-radius:5px;
+    font-family: Montserrat,sans-serif;
+    font-size: 13pt;
+    padding-left: 8pt;
+    height:25pt;
+    width:400pt;
+    font-family: Montserrat,sans-serif;
+    font-weight:500;
+    color:rgb(170,170,170);
+    background-color: rgba(250,255,255,.90);
+}
