@@ -2,50 +2,55 @@
 
 <html>
 <head>
+    <link rel="shortcut icon" href="navic.ico">
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
     <title>Naviaddress - Web page for every place on the Earth</title>
     <META NAME="keywords" CONTENT="Naviaddress, places, points of interest">
     <link rel="stylesheet" type="text/css" href="theme.css">
-<style>
-body {font-family: tahoma;}
-table {font-size: 10pt;}
-hr {color: gray;}
-li {padding-bottom: 4px;}
-</style>
-<script>
-var i = 0;
-function f(){
-    i = (i+1)%13;
-    document.body.background = "pic/p" + String(i) + ".jpg";
-}
-
-function c(){
-    e = document.getElementById("search");
-    e.style.backgroundColor = "white";
-    e.style.color = "rgb(90,90,125)";
-    e.value="";
-}
-
-function search(event){
-    e = document.getElementById("search");
-    if(event.keyCode === 13){
-        alert("Search to be implemented");
-        e.style.backgroundColor = "rgba(250,255,255,.90)";
-        e.style.color = "rgb(170,170,170)";
-        e.value="Search by naviaddress, tele address, post address";
-    }
-}
-</script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="script.js"/>
 </head>
 
-<body background="pic/p0.jpg" >
+<script>
 
-<div id="header">Naviaddress
+</script>
+<body background="pic/p0.jpg" onload="initialize()" >
 
-<span id="header2"><input id="search" onclick="c()" onkeypress="search(event)" type="text" value="Search by naviaddress, tele address, post address"</span>
+<div id="header">
+    <span id="search">
+        <input id="search_input" onclick="c()" onkeypress="search(event)" type="text" value="Search by naviaddress, tele address, post address"/> 
+        <input id="search_button" onclick="c()" onkeypress="search(event)" type="button" value="N"/>
+    </span>
+    <span id="navi_title">
+        <span id="logo">NAVIADDRESS:</span>
+        <span id="sity_code">(7814)</span> 
+        <span id="base_code">337 234</span>
+    </span>
 </div>
-<br><br><br><br>
-<input type="button" value="UPD" onclick="f()">
 
+<div id="post_addr">
+    <span id="post_addr_text">
+        <span id="post_addr_label">Address:</span>
+        <span id="post_addr_value">pr. Lenina, 33, Petrozavodsk, Republic of Karelia, 185000, RUSSIA</span>
+    </span>
+</div>
+
+<table id="content" width="100%"><tr><td width="30%">
+<div id="content1" onmouseover="show()" onmouseout="hide()"></div>
+</td><td>
+<div id="content2"> 
+<b>News and Weather</b>
+<p>Petrozavodsk is the capital of the Republic of Karelia (Республика Карелия)
+streching along the western edge of Lake Onega. 
+<p>Literally meaning "Peter's Factory", the city was founded in 1703 to house an iron 
+foundry to manufacture and supply anchors for the Baltic Fleet during the 
+Great Northern War between Russia and Sweden. 
+<p>The city is no longer home to the foundry, 
+however the remnants and ruins can be seen one of the cities numerous parks.</div>
+</td></tr></table>
+<br><br><br><br>
+<input type="button" value="UPD" onclick="upd()">
+
+<div id="footer">&copy; Naviworld, 2015</div>
 </body>
 </html>
