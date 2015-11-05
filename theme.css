@@ -1,5 +1,5 @@
 #header{
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width:100%;
@@ -33,7 +33,7 @@
     }
 #search_input{
     border-radius: 3px 0 0 3px;
-    position: fixed;
+    position: absolute;
     font-family: Montserrat,sans-serif;
     font-size: 16px;
     padding-left: 8px;
@@ -47,14 +47,14 @@
 }
 #search_button{
     border-radius: 0 3px 3px 0;
-    position: fixed;
+    position: absolute;
     height:28px;
     width:38px;
     right:21px;
     border:1px;
 }
 #post_addr{
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 56px;
     height: 35px;
@@ -72,32 +72,63 @@
 }
 
 #google_map{
-    border-radius: 5px;
     position: relative;
-    left: 5px;
+    left: 0px;
     top: 105px;
-    height: 350px;
-    width:38%;
+    height: 1450px;
+    width:calc(100%-10px);
+}
+
+#google_map1, #google_map2, #google_map3, #google_map4{
+    position: absolute;
+    border-radius: 5px ;
+    height: 250px;
+    width:24%;
     background-color: rgba(255,255,255,.85);
     margin:0;
+    top: 150px
+    }
+#google_map1{
+    left: 0px;
+}
+#google_map2{
+    left: 25%;
+}
+#google_map3{
+    left: 50%;
+    width:50%;
+    top:0;
+    height:400px;
+}
+#google_map4{
+    border-radius: 0 0 0 10%;
+    width:30%;
+    right: 0;
+    top: 410px;
 }
 
-#content{
+#content1,#content2 {
     border-radius: 5px;
-    position: fixed;
-    right: 13px;
-    top: 113px;
-    height: 320px;
-    width: calc(62% - 64px);
+    position: absolute;
+    height: 134px;
+    top: 0px;
+    width: calc(24% - 14px);
     background-color: rgba(255,255,255,.85);
-    padding:15px;
+    padding: 7px;
+    font-family: Montserrat,sans-serif;
+    font-size: 13px;
 }
-
+#content1{
+    left: 0;
+}
+#content2{
+    left: 25%;
+}
 #numbers{
     border-radius: 5px;
     position: fixed;
     left: 13px;
-    top: 476px;
+    top: 976px;
     height: 187px;
     width: calc(100% - 26px);
     background-color: rgba(255,255,255,.85);

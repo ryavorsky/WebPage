@@ -5,7 +5,7 @@
     <title>Naviaddress - Web page for every place on the Earth</title>
     <META NAME="keywords" CONTENT="Naviaddress, places, points of interest">
     <link rel="stylesheet" type="text/css" href="theme.css">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="script.js"></script>
 </head>
 <body background="pic/p0.jpg" onload="initialize()" >
@@ -28,18 +28,29 @@
     </span>
 </div>
 
-<div id="google_map"></div>
-
-<div id="content"> 
-    <b>News and Weather</b>
-    <p>Petrozavodsk is the capital of the Republic of Karelia (Республика Карелия)
-    streching along the western edge of Lake Onega. 
-    <p>Literally meaning "Peter's Factory", the city was founded in 1703 to house an iron 
-    foundry to manufacture and supply anchors for the Baltic Fleet during the 
-    Great Northern War between Russia and Sweden. 
-    <p>The city is no longer home to the foundry, 
-    however the remnants and ruins can be seen one of the cities numerous parks.
+<div id="google_map">
+    <div id="content1"> 
+        <b>Karelia</b>
+        (Karelian, Finnish and Estonian: Karjala; Russian: Карелия, Kareliya; Swedish: Karelen), 
+        the land of the Karelian peoples, is an area in Northern Europe of historical significance for Finland, 
+        Russia, and Sweden. 
+        <br/>It is currently divided between the Russian Republic of Karelia, 
+        the Russian Leningrad Oblast, and Finland (the regions of South Karelia and North Karelia).
+    </div>
+    <div id="content2"> 
+        <b>Petrozavodsk</b>
+         is the capital of the Republic of Karelia (Республика Карелия)
+        streching along the western edge of Lake Onega. 
+        <p>Literally meaning "Peter's Factory", the city was founded in 1703 to house an iron 
+        foundry to manufacture and supply anchors for the Baltic Fleet during the 
+        Great Northern War between Russia and Sweden. 
+        </div>
+    <div id="google_map1">Map 1</div>
+    <div id="google_map2">Map 2</div>
+    <div id="google_map3">Map 3</div>
+    <div id="google_map4">Map 4</div>
 </div>
+
 <div id="numbers"></div>
 <br><br><br><br>
 <input id="UPD" type="button" value="UPD" onclick="upd()">

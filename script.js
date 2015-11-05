@@ -30,48 +30,97 @@ function search(event){
     }
 }
 
-function show(){
-    e = document.getElementById("content1");
-    e.style.opacity = "1.0";
-}
-
-function hide(){
-    e = document.getElementById("content1");
-    e.style.opacity = "0.5";   
-}
-
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var geocoder = new google.maps.Geocoder();
-var map;
-var marker = new google.maps.Marker({map: map});
+var map1;
+var map2;
+var map3;
+var map4;
+var maps = [map1, map2, map3, map4]
+var marker1 = new google.maps.Marker({map: map1});
+var marker2 = new google.maps.Marker({map: map2});
+var marker3 = new google.maps.Marker({map: map3});
+var marker4 = new google.maps.Marker({map: map4});
+var markers = [marker1, marker2, marker3, marker4]
+
+var pinIcon1 = new google.maps.MarkerImage(
+    "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FFEE10",
+    null, /* size is determined at runtime */
+    null, /* origin is 0,0 */
+    null, /* anchor is bottom center of the scaled image */
+    new google.maps.Size(10, 15)
+); 
+var pinIcon2 = new google.maps.MarkerImage(
+    "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|DDEE10",
+    null, /* size is determined at runtime */
+    null, /* origin is 0,0 */
+    null, /* anchor is bottom center of the scaled image */
+    new google.maps.Size(13, 21)
+); 
+var pinIcon3 = new google.maps.MarkerImage(
+    "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|99FFAA"
+); 
 
 function initialize() {
-  directionsDisplay = new google.maps.DirectionsRenderer();
-  var mapOptions = {
-    zoom:17
+  //directionsDisplay = new google.maps.DirectionsRenderer();
+  var mapOptions1 = {
+    zoom:3,
+    disableDefaultUI: true
   };
-  map = new google.maps.Map(document.getElementById('google_map'), mapOptions);
-  directionsDisplay.setMap(map);
-  cmap()
+  var mapOptions2 = {
+    zoom:10,
+    disableDefaultUI: true
+  };
+  var mapOptions3 = {
+    zoom:16,
+    disableDefaultUI: true
+  };
+  var mapOptions4 = {
+    zoom:16,
+    disableDefaultUI: true,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+  };
+  map1 = new google.maps.Map(document.getElementById('google_map1'), mapOptions1);
+  map2 = new google.maps.Map(document.getElementById('google_map2'), mapOptions2);
+  map3 = new google.maps.Map(document.getElementById('google_map3'), mapOptions3);
+  map4 = new google.maps.Map(document.getElementById('google_map4'), mapOptions4);
+  maps = [map1, map2, map3, map4];
+  //directionsDisplay.setMap(map1);
+  cmap(1);
+  cmap(2);
+  cmap(3);
+  cmap(4);
 }
 
-function cmap(){
-  marker.setMap(null);
+function cmap(i){
+  markers[i-1].setMap(null);
   pa = document.getElementById("post_addr_value");
   var address = pa.innerHTML;
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
-      map.setCenter(results[0].geometry.location);
-      marker = new google.maps.Marker({
-        map: map,
-        position: results[0].geometry.location
-      });
+      maps[i-1].setCenter(results[0].geometry.location);
+      if(i<4){
+          marker = new google.maps.Marker({
+            map: maps[i-1],
+            position: results[0].geometry.location
+          });
+      }
+      if (i==1){
+        marker.setIcon(pinIcon1);
+      };
+      if (i==2){
+        marker.setIcon(pinIcon2);
+      }
+      if (i==3){
+        marker.setIcon(pinIcon3);
+      };
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
 }
+
 function calcRoute() {
 
   var cityId = parseInt(document.getElementById('city').value);  
