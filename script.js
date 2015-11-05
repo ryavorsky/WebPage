@@ -14,19 +14,19 @@ function upd(){
 }
 
 function c(){
-    e = document.getElementById("search");
+    e = document.getElementById("search_input");
     e.style.backgroundColor = "white";
     e.style.color = "rgb(90,90,125)";
     e.value="";
 }
 
 function search(event){
-    e = document.getElementById("search");
+    e = document.getElementById("search_input");
     if(event.keyCode === 13){
-        upd();
         e.style.backgroundColor = "rgba(250,255,255,.90)";
         e.style.color = "rgb(170,170,170)";
         e.value="Search by naviaddress, tele address, post address";
+        upd();
     }
 }
 
@@ -51,14 +51,14 @@ function initialize() {
   var mapOptions = {
     zoom:17
   };
-  map = new google.maps.Map(document.getElementById('content1'), mapOptions);
+  map = new google.maps.Map(document.getElementById('google_map'), mapOptions);
   directionsDisplay.setMap(map);
   cmap()
 }
 
 function cmap(){
   marker.setMap(null);
-  pa = document.getElementById("post_addr");
+  pa = document.getElementById("post_addr_value");
   var address = pa.innerHTML;
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {

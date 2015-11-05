@@ -1,5 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
 <html>
 <head>
     <link rel="shortcut icon" href="navic.ico">
@@ -8,18 +6,13 @@
     <META NAME="keywords" CONTENT="Naviaddress, places, points of interest">
     <link rel="stylesheet" type="text/css" href="theme.css">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script src="script.js"/>
+    <script src="script.js"></script>
 </head>
-
-<script>
-
-</script>
 <body background="pic/p0.jpg" onload="initialize()" >
-
 <div id="header">
     <span id="search">
         <input id="search_input" onclick="c()" onkeypress="search(event)" type="text" value="Search by naviaddress, tele address, post address"/> 
-        <input id="search_button" onclick="c()" onkeypress="search(event)" type="button" value="N"/>
+        <input type="button" id="search_button" onclick="c()" value="Go"/>
     </span>
     <span id="navi_title">
         <span id="logo">NAVIADDRESS:</span>
@@ -35,21 +28,21 @@
     </span>
 </div>
 
-<table id="content" width="100%"><tr><td width="30%">
-<div id="content1" onmouseover="show()" onmouseout="hide()"></div>
-</td><td>
-<div id="content2"> 
-<b>News and Weather</b>
-<p>Petrozavodsk is the capital of the Republic of Karelia (Республика Карелия)
-streching along the western edge of Lake Onega. 
-<p>Literally meaning "Peter's Factory", the city was founded in 1703 to house an iron 
-foundry to manufacture and supply anchors for the Baltic Fleet during the 
-Great Northern War between Russia and Sweden. 
-<p>The city is no longer home to the foundry, 
-however the remnants and ruins can be seen one of the cities numerous parks.</div>
-</td></tr></table>
+<div id="google_map"></div>
+
+<div id="content"> 
+    <b>News and Weather</b>
+    <p>Petrozavodsk is the capital of the Republic of Karelia (Республика Карелия)
+    streching along the western edge of Lake Onega. 
+    <p>Literally meaning "Peter's Factory", the city was founded in 1703 to house an iron 
+    foundry to manufacture and supply anchors for the Baltic Fleet during the 
+    Great Northern War between Russia and Sweden. 
+    <p>The city is no longer home to the foundry, 
+    however the remnants and ruins can be seen one of the cities numerous parks.
+</div>
+<div id="numbers"></div>
 <br><br><br><br>
-<input type="button" value="UPD" onclick="upd()">
+<input id="UPD" type="button" value="UPD" onclick="upd()">
 
 <div id="footer">&copy; Naviworld, 2015</div>
 </body>

@@ -3,34 +3,125 @@
     left: 0;
     top: 0;
     width:100%;
-    min-height: 50px;
-    background-color: rgba(103,112,138,.75);
-    padding: 5pt;
-    padding-left:10pt;
-    
+    height: 55px;
+    background-color: rgba(103,112,138,.85);
     font-family: Montserrat,sans-serif;
-    font-weight:700;
-    font-size: 30pt;
+    font-weight:800;
+    font-size: 25px;
     color: rgba(250,255,255,.95);
+    padding-top:1px;
+}
+#navi_title{
+    text-shadow: -1px 0 #55A, 0 1px #55A, 1px 0 #55A, 0 -1px #55A;
+    position: absolute;
+    top:9px;
+    left:18px;
+}
+#sity_code{
+    padding:7px;
+    color: rgb(210,210,210);
+}
+#base_code{
+    text-shadow: -1px 0 #55A, 0 1px #55A, 1px 0 #55A, 0 -1px #55A;
 }
 
-#header2{
-    width: calc(100% - 201pt);
-    text-align:right;
-    position:fixed;
-    vertical-align: top;
-    top:11pt;
-    }
-    
 #search{
-    border-radius:5px;
+    position: absolute;
+    top:13px;
+    right:10px;
+    width:429px;
+    }
+#search_input{
+    border-radius: 3px 0 0 3px;
+    position: fixed;
     font-family: Montserrat,sans-serif;
-    font-size: 13pt;
-    padding-left: 8pt;
-    height:25pt;
-    width:400pt;
+    font-size: 16px;
+    padding-left: 8px;
+    height:28px;
+    width:380px;
     font-family: Montserrat,sans-serif;
     font-weight:500;
     color:rgb(170,170,170);
     background-color: rgba(250,255,255,.90);
+    border:0;
+}
+#search_button{
+    border-radius: 0 3px 3px 0;
+    position: fixed;
+    height:28px;
+    width:38px;
+    right:21px;
+    border:1px;
+}
+#post_addr{
+    position: fixed;
+    left: 0;
+    top: 56px;
+    height: 35px;
+    width:100%;
+    background-color: rgba(255,255,255,.85);
+    font-family: Montserrat,sans-serif;
+    font-weight:700;
+    font-size: 18px;
+    color: rgba(105,15,105,.95);
+}
+#post_addr_text{
+    position: absolute;
+    top:8px;
+    left:18px;
+}
+
+#google_map{
+    border-radius: 5px;
+    position: relative;
+    left: 5px;
+    top: 105px;
+    height: 350px;
+    width:38%;
+    background-color: rgba(255,255,255,.85);
+    margin:0;
+}
+
+#content{
+    border-radius: 5px;
+    position: fixed;
+    right: 13px;
+    top: 113px;
+    height: 320px;
+    width: calc(62% - 64px);
+    background-color: rgba(255,255,255,.85);
+    padding:15px;
+}
+
+#numbers{
+    border-radius: 5px;
+    position: fixed;
+    left: 13px;
+    top: 476px;
+    height: 187px;
+    width: calc(100% - 26px);
+    background-color: rgba(255,255,255,.85);
+}
+
+#UPD{
+    position: fixed;
+    left: 0;
+    bottom: 100;
+}
+
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    min-height: 15pt;
+    background-color: rgba(103,112,138,.75);
+    padding: 7pt;
+    padding-left:20pt;
+    
+    font-family: Montserrat,sans-serif;
+    font-weight:700;
+    font-size: 12pt;
+    color: rgba(250,255,255,.95);
+    text-align:center;
 }
