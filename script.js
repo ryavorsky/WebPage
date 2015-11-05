@@ -38,12 +38,23 @@ var map2;
 var map3;
 var map4;
 var maps = [map1, map2, map3, map4]
+var goldStar = {
+    path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+    fillColor: 'rgba(255,255,55,0.75)',
+    fillOpacity: 0.8,
+    scale: 0.07,
+    strokeColor: 'rgba(100,100,100,0.5)',
+    strokeWeight: 2
+  };
+
 var marker1 = new google.maps.Marker({map: map1});
 var marker2 = new google.maps.Marker({map: map2});
-var marker3 = new google.maps.Marker({map: map3});
+var marker3 = new google.maps.Marker({icon: goldStar, map: map3});
 var marker4 = new google.maps.Marker({map: map4});
 var markers = [marker1, marker2, marker3, marker4]
-
+var image1 = 'red_flag32.png'
+var image2 = 'red_flag.png'
+var image3 = 'red_ball.png'
 var pinIcon1 = new google.maps.MarkerImage(
     "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FFEE10",
     null, /* size is determined at runtime */
@@ -59,7 +70,7 @@ var pinIcon2 = new google.maps.MarkerImage(
     new google.maps.Size(13, 21)
 ); 
 var pinIcon3 = new google.maps.MarkerImage(
-    "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|99FFAA"
+    "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FF8888"
 ); 
 
 function initialize() {
@@ -74,7 +85,8 @@ function initialize() {
   };
   var mapOptions3 = {
     zoom:16,
-    disableDefaultUI: true
+    disableDefaultUI: true,
+    styles: [{"featureType":"road.highway","elementType":"labels","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"road","elementType":"all","stylers":[{"hue":"#ffe94f"},{"saturation":100},{"lightness":4},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#ffe94f"},{"saturation":100},{"lightness":4},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#333333"},{"saturation":-100},{"lightness":-74},{"visibility":"off"}]}]
   };
   var mapOptions4 = {
     zoom:16,
@@ -107,13 +119,13 @@ function cmap(i){
           });
       }
       if (i==1){
-        marker.setIcon(pinIcon1);
+        marker.setIcon(image1);
       };
       if (i==2){
-        marker.setIcon(pinIcon2);
+        marker.setIcon(image2);
       }
       if (i==3){
-        marker.setIcon(pinIcon3);
+        marker.setIcon(image3);
       };
     } else {
       alert('Geocode was not successful for the following reason: ' + status);

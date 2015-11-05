@@ -3,11 +3,11 @@
     left: 0;
     top: 0;
     width:100%;
-    height: 55px;
+    height: 57px;
     background-color: rgba(103,112,138,.85);
     font-family: Montserrat,sans-serif;
     font-weight:800;
-    font-size: 25px;
+    font-size: 27px;
     color: rgba(250,255,255,.95);
     padding-top:1px;
 }
@@ -35,7 +35,7 @@
     border-radius: 3px 0 0 3px;
     position: absolute;
     font-family: Montserrat,sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 8px;
     height:28px;
     width:380px;
@@ -57,7 +57,7 @@
     position: absolute;
     left: 0;
     top: 56px;
-    height: 35px;
+    height: 37px;
     width:100%;
     background-color: rgba(255,255,255,.85);
     font-family: Montserrat,sans-serif;
@@ -73,59 +73,91 @@
 
 #google_map{
     position: relative;
-    left: 0px;
-    top: 105px;
+    left: 15px;
+    top: 120px;
     height: 1450px;
-    width:calc(100%-10px);
+    width:calc(100% - 30px);
 }
 
 #google_map1, #google_map2, #google_map3, #google_map4{
     position: absolute;
-    border-radius: 5px ;
+    border-radius: 7px ;
     height: 250px;
-    width:24%;
+    width:23%;
     background-color: rgba(255,255,255,.85);
     margin:0;
     top: 150px
     }
 #google_map1{
+    border-radius: 0 0 7px 7px;
     left: 0px;
 }
 #google_map2{
-    left: 25%;
+    border-radius: 0 0 7px 7px;
+    left: calc(23% + 20px);
 }
 #google_map3{
-    left: 50%;
-    width:50%;
+    border-radius: 7px 0 0 7px;
+    right: calc(21% - 19px);
+    width: calc(33% - 31px);
     top:0;
     height:400px;
 }
 #google_map4{
     border-radius: 0 0 0 10%;
-    width:30%;
+    width:40%;
+    height:300px;
     right: 0;
-    top: 410px;
+    top: 450px;
 }
 
-#content1,#content2 {
-    border-radius: 5px;
+#content1,#content2,#content3 {
+    border-radius: 7px 7px 0 0;
     position: absolute;
-    height: 134px;
+    height: 130px;
     top: 0px;
-    width: calc(24% - 14px);
-    background-color: rgba(255,255,255,.85);
-    padding: 7px;
+    width: calc(23% - 20px);
+    background-color: rgb(235,241,245);
+    padding: 10px;
     font-family: Montserrat,sans-serif;
     font-size: 13px;
+    line-height: 130%;
+    color: rgb(22,22,110);
+}
+span.title{
+    font-size: 17px;
+    text-shadow: -0.5px 0 #55A;
+    color:rgb(90,90,150);
+    font-weight:700;
+    line-height: 20px;
 }
 #content1{
     left: 0;
 }
 #content2{
-    left: 25%;
+    left: calc(23% + 20px);
+}
+#content3{
+    border-radius: 0 7px 7px 0;
+    width: calc(21% - 39px);
+    height:380px;
+    right: 0;
+    background-color: rgb(245,241,235);
+}
+
+#ref1, #ref2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    padding: 0 7px 3px 0;
+    color: #aac;
+}
+a {
+    color: #aac;
 }
 #numbers{
-    border-radius: 5px;
+    border-radius: 7px;
     position: fixed;
     left: 13px;
     top: 976px;
