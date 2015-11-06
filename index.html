@@ -5,7 +5,9 @@
     <title>Naviaddress - Web page for every place on the Earth</title>
     <META NAME="keywords" CONTENT="Naviaddress, places, points of interest">
     <link rel="stylesheet" type="text/css" href="theme.css">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <link rel="stylesheet" type="text/css" href="blocks.css">
+    <!--script src="https://maps.googleapis.com/maps/api/js?v=3.exp" type="text/javascript" ></script-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNyx4uSvcVvOXE6H9r3gkzblwNcmSHeDM&libraries=places&language=en" type="text/javascript" ></script>    
     <script src="script.js"></script>
 </head>
 <body background="pic/p0.jpg" onload="initialize()" >
@@ -28,7 +30,7 @@
     </span>
 </div>
 
-<div id="google_map">
+<div id="content">
     <div id="content1"> 
         <span class="title">Karelia</span>
         (Karelian, Finnish and Estonian: Karjala; Russian: Карелия, Kareliya; Swedish: Karelen), 
@@ -65,14 +67,15 @@
         <br/>Humidity: <span class="title">85%</span>
         <br/>Wind: <span class="title">2 m/s </span>
     </div>
+    
     <div id="google_map1">Map 1</div>
     <div id="google_map2">Map 2</div>
     <div id="google_map3">Map 3</div>
-    <div id="google_map4">Map 4</div>
+        
+    <div id="places"><span class="title">Nearby places: </span></div>
+    <div id="pictures"></div>
 </div>
 
-<div id="numbers"></div>
-<br><br><br><br>
 
 <div id="footer">&copy; Naviworld, 2015</div>
 </body>
