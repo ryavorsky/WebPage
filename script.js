@@ -61,8 +61,7 @@ function initialize() {
     disableDefaultUI: true
   };
   var mapOptions3 = {
-    zoom:16,
-    disableDefaultUI: true
+    zoom:16
   };
   map1 = new google.maps.Map(document.getElementById('google_map1'), mapOptions1);
   map2 = new google.maps.Map(document.getElementById('google_map2'), mapOptions2);
@@ -84,6 +83,7 @@ function initialize() {
             marker.setIcon(images[i]);
         };
         get_places(1000);
+        pan();
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
@@ -110,15 +110,15 @@ function places_callback(results , status, pagination) {
     
     icons=[];
     res = [];
-    space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+    space = '&nbsp;&nbsp;';
     for (i=0; i < places.length; i++){
-        big_img = '<img width="22px" src="' + places[i].icon +'" / > ';
-        small_img = '<img width="16px" src="' + places[i].icon +'" / > ';
-        name = places[i].name + ', ';
-        addr = '<a href="">' + places[i].vicinity + '</a>';
+        big_img = '<img width="20px" src="' + places[i].icon +'" / > ';
+        small_img = '<img width="16px" src="' + places[i].icon +'" / >&nbsp;';
+        name = places[i].name;
+        addr = '<a href="' + places[i].vicinity + '">' + name + '</a>';
         
         icons.push(big_img);
-        res.push(small_img + name + addr);
+        res.push(small_img + addr);
     };
     
     icons = icons.sort();
@@ -127,11 +127,36 @@ function places_callback(results , status, pagination) {
             icons[i-1] = icons[i-1] + space;
         }
     }
+    
+    ic = document.getElementById('icons');
+    ic.innerHTML = icons.join('');
     e = document.getElementById('places');
-    e.innerHTML = e.innerHTML + space + icons.join('') + '<p>' + res.join('; ' + space);
+    e.innerHTML = e.innerHTML + space + res.join(', ' + space);
 
 }
 
+var webService = new google.maps.StreetViewService();  
+var checkaround = 100;
+var panorama;
+
+function pan() {
+    webService.getPanoramaByLocation(map_center, checkaround, checkNearestStreetView);
+}
+
+function checkNearestStreetView(panoData){
+    if(panoData){
+         if(panoData.location){
+            if(panoData.location.latLng){
+              panorama = new google.maps.StreetViewPanorama(
+                  document.getElementById('pictures'),
+                  {
+                    position: panoData.location.latLng,
+                    pov: {heading: 165, pitch: 10}
+                  });
+            }
+        }
+    }
+}
 
 function calcRoute() {
 
